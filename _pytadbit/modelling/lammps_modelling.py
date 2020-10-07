@@ -1896,15 +1896,15 @@ def generate_bond_list(steering_pairs):
                 centre                 = cols_vals[5]
                 kappa                  = cols_vals[4]*steering_pairs['k_factor']
                  
-                bonType = None
+                bondType = None
                 if cols_vals[3] == "Harmonic":
-                    bonType = 'bond'
+                    bondType = 'bond'
                 elif cols_vals[3] == "HarmonicLowerBound":
-                    bonType = 'lbond'
+                    bondType = 'lbound'
 
-                if bonType:
+                if bondType:
                     outf.append('fix %s all restrain %s %d %d %f %f %f %f' %(
-                        name, bonType, particle1, particle2, 0, kappa, 
+                        name, bondType, particle1, particle2, 0, kappa, 
                         centre, centre))
 
             
