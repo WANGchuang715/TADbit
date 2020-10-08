@@ -30,10 +30,8 @@ try:
 except ImportError:
     pass
 
-try:
-    from lammps import lammps
-except ImportError:
-    pass
+from lammps import lammps
+
 
 from pytadbit.modelling import LAMMPS_CONFIG as CONFIG
 from pytadbit.modelling.lammpsmodel import LAMMPSmodel
